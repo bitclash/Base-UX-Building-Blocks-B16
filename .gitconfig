@@ -1,0 +1,9 @@
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
+[user]
+  name = bitclash
+  email = aaroncooke@me.com
+[merge]
+  ff = false
+pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
