@@ -1,0 +1,51 @@
+digraph summary{
+
+                U [label="User", shape=oval]
+                D [label="Decides 'I want to do something fun outside!'"]
+                GM [label="Go to app on mobile browser", shape=box]
+                GD [label="Go to app on desktop browser", shape=box]
+                CL [label="Create a login", shape=box]
+                CL2 [label="Provide information", shape=box]
+                CL3 [label="Confirm account creation", shape=box]
+                L [label="Login with Facebook" shape=box]
+                O [label="Filter and choose outdoor activity", shape=box]
+                FIND [label="Nearby activities displayed as interactive map", shape=box]
+                OC [label="Click on desired activity", shape=box]
+                AS [label="Summary of activity displayed (image/descriptions/reviews/ratings)", shape=box]
+                CR [label="Community review", shape=box]
+                CI [label="Read community member profile", shape=box]
+                SR [label="Submit a review", shape=box]
+                GO [label="Confirm desired activity", shape=box]
+                DIR [label="Google Map directions from user location to activity displayed", shape=box]
+
+                U->D
+                D->GM
+                D->GD
+                GM->L
+                GD->L
+                GM->CL
+                GD->CL
+                CL->CL2
+                CL2->CL3
+                CL3->O
+                L->O
+                O->FIND [label=" Via device GPS, app finds user's location" ]
+                FIND->OC
+                OC->AS
+                AS->FIND
+                AS->SR
+                AS->CR
+                SR->GO
+                SR->AS
+                CR->CI
+                CR->AS
+                CI->AS
+                CR->GO
+                AS->GO
+                GO->DIR
+
+
+
+
+
+        }
